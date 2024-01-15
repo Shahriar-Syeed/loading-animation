@@ -1,0 +1,83 @@
+section{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  position: relative;
+}
+#text{
+  margin-bottom: 48px;
+}
+#text.action{
+  background-color: #000;
+  color:#fff;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+.btn-container{
+  display: flex;
+  justify-content: space-around;
+}
+#btnAction{
+  background-color: green;
+}
+#btnReset{
+  background-color: red;
+}
+.btn{
+  color:#fff;
+  padding: 8px 16px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn:hover{
+  opacity:0.8;
+}
+.container .progress-bar{
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  top:50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: none;
+
+}
+.container.action .progress-bar{
+  display: block;
+}
+#innerBar{
+  background-color: red;
+ 
+  height: 100%;
+  width: 0;
+  transition: all unset;
+
+  animation: fullBar 3s ease;
+}
+@keyframes fullBar{
+  from{
+    width:0%;
+  }
+  to{
+    width:100%;
+  }
+}
+.container + .overlay{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.694);
+  transition: 0.2s;
+  display: none;
+}
+.container.action + .overlay{
+  display: block;
+}
